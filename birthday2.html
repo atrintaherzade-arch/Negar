@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Negar ♡</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    html, body {
+        margin: 0;
+        width: 100%;
+        min-height: 100%;
+    }
+
+    body {
+        min-height: 100vh;
+        padding: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background:
+            radial-gradient(circle at 15% 15%, rgba(255,255,255,.85), transparent 25%),
+            radial-gradient(circle at 85% 85%, rgba(220,205,235,.5), transparent 30%),
+            #f4eff7;
+
+        font-family: Georgia, "Times New Roman", serif;
+        color: #514957;
+        overflow-x: hidden;
+    }
+
+    .page {
+        width: 100%;
+        max-width: 650px;
+        min-height: 650px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+    }
+
+    .decor {
+        position: absolute;
+        color: #b6a6c1;
+        font-size: 23px;
+        opacity: .65;
+
+        animation: float 4s ease-in-out infinite;
+        user-select: none;
+    }
+
+    .d1 {
+        top: 9%;
+        left: 8%;
+    }
+
+    .d2 {
+        top: 17%;
+        right: 9%;
+        animation-delay: 1s;
+    }
+
+    .d3 {
+        bottom: 13%;
+        left: 10%;
+        animation-delay: 1.7s;
+    }
+
+    .d4 {
+        bottom: 17%;
+        right: 8%;
+        animation-delay: .6s;
+    }
+
+    .d5 {
+        top: 45%;
+        left: 2%;
+        animation-delay: 2s;
+    }
+
+    .d6 {
+        top: 50%;
+        right: 2%;
+        animation-delay: 1.3s;
+    }
+
+    .card {
+        width: min(92%, 480px);
+
+        padding: 48px 30px;
+
+        text-align: center;
+
+        background: rgba(255,255,255,.74);
+
+        border: 1px solid rgba(255,255,255,.9);
+
+        border-radius: 32px;
+
+        box-shadow:
+            0 25px 70px rgba(75,60,85,.13),
+            inset 0 1px 0 rgba(255,255,255,.9);
+
+        backdrop-filter: blur(12px);
+
+        position: relative;
+        z-index: 2;
+    }
+
+    .top {
+        font-size: 14px;
+        letter-spacing: 3px;
+        color: #9b8da4;
+        text-transform: uppercase;
+        margin-bottom: 22px;
+    }
+
+    .gift {
+        font-size: 58px;
+        margin-bottom: 15px;
+
+        animation: gentle 2.5s ease-in-out infinite;
+    }
+
+    h1 {
+        margin: 0;
+
+        font-size: clamp(30px, 7vw, 43px);
+
+        font-weight: normal;
+
+        color: #554b5d;
+
+        line-height: 1.35;
+    }
+
+    .line {
+        width: 70px;
+        height: 1px;
+
+        background: #b9a8c4;
+
+        margin: 24px auto;
+    }
+
+    .text {
+        font-size: 17px;
+        line-height: 2;
+
+        color: #706675;
+
+        margin: 0 auto 25px;
+    }
+
+    .birthday-date {
+        display: inline-block;
+
+        padding: 12px 23px;
+
+        border-radius: 16px;
+
+        background: rgba(225,214,231,.65);
+
+        color: #716477;
+
+        font-size: 16px;
+
+        margin-bottom: 27px;
+    }
+
+    .little-note {
+        font-size: 14px;
+
+        line-height: 1.9;
+
+        color: #9a909f;
+
+        margin-bottom: 28px;
+    }
+
+    .back {
+        display: inline-block;
+
+        padding: 12px 25px;
+
+        border-radius: 15px;
+
+        background: #bca9c7;
+
+        color: white;
+
+        text-decoration: none;
+
+        font-size: 15px;
+
+        transition: .25s ease;
+
+        box-shadow: 0 8px 20px rgba(100,80,110,.12);
+    }
+
+    .back:hover {
+        transform: translateY(-3px);
+
+        box-shadow: 0 12px 25px rgba(100,80,110,.18);
+    }
+
+    .secret-area {
+        margin-top: 27px;
+
+        padding-top: 18px;
+
+        border-top: 1px solid rgba(160,145,170,.25);
+    }
+
+    .secret-button {
+        background: transparent;
+
+        border: none;
+
+        color: #9d91a5;
+
+        font-family: inherit;
+
+        font-size: 13px;
+
+        cursor: pointer;
+
+        padding: 8px;
+    }
+
+    .secret-content {
+        display: none;
+
+        margin-top: 12px;
+
+        padding: 15px;
+
+        border-radius: 15px;
+
+        background: rgba(240,234,244,.8);
+
+        color: #756b7c;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-9px);
+        }
+    }
+
+    @keyframes gentle {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
+        }
+
+        50% {
+            transform: translateY(-5px) rotate(2deg);
+        }
+    }
+
+    @media (max-width: 500px) {
+
+        .page {
+            min-height: 600px;
+        }
+
+        .card {
+            padding: 43px 22px;
+        }
+
+        .decor {
+            font-size: 18px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="decor d1">♡</div>
+    <div class="decor d2">✦</div>
+    <div class="decor d3">♡</div>
+    <div class="decor d4">✧</div>
+    <div class="decor d5">·</div>
+    <div class="decor d6">♡</div>
+
+
+    <main class="card">
+
+        <div class="top">
+            just for you
+        </div>
+
+        <div class="gift">
+            🎁
+        </div>
+
+        <h1>
+            A little surprise<br>
+            for Negar ♡
+        </h1>
+
+        <div class="line"></div>
+
+        <p class="text">
+            I hope this little corner<br>
+            makes your day a tiny bit more special. ♡
+        </p>
+
+        <div class="birthday-date">
+            23 September · Your Day ♡
+        </div>
+
+        <p class="little-note">
+            There are still a few things waiting<br>
+            to be added here...
+        </p>
+
+        <a class="back" href="index.html">
+            ← back
+        </a>
+
+
+        <div class="secret-area">
+
+            <button
+                class="secret-button"
+                onclick="showSecret()"
+            >
+                ♡ secret
+            </button>
+
+            <div
+                class="secret-content"
+                id="secretContent"
+            >
+                This secret is waiting for its
+                special idea... ✦
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script>
+
+function showSecret() {
+
+    const secret =
+        document.getElementById("secretContent");
+
+    if (secret.style.display === "block") {
+
+        secret.style.display = "none";
+
+    } else {
+
+        secret.style.display = "block";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
